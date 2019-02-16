@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 # Developer : Hamdy Abou El Anein
 # writed in python 3
 # Read the readme to install the python 3 modules and dependencies
