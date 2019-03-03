@@ -9,6 +9,18 @@ import sys
 from easygui import *
 import vlc
 
+def energy1058():
+    player = vlc.MediaPlayer("http://tachyon.shoutca.st:8590/stream")
+    player.play()
+    image = "./pictures/energy1058.jpg"
+    msg = "You are listening the Energy 1058 radio"
+    choices = ["Exit","Start menu"]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    else:
+        sys.exit(0)
 
 def fdlounge():
     player = vlc.MediaPlayer("http://listen.radionomy.com/fd-lounge-radio")
@@ -66,7 +78,7 @@ def abcpiano():
 def start():
     image = "./pictures/live.jpg"
     msg = "Click on the button to open a live web radio"
-    choices = ["Mosaique FM","ABC Piano","NRJ Lounge","FD lounge radio"]
+    choices = ["Mosaique FM","ABC Piano","NRJ Lounge","FD lounge radio","Energy 1058"]
     reply = buttonbox(msg, image=image, choices=choices)
     if reply == "Mosaique FM":
         radiomosaique()
@@ -76,6 +88,8 @@ def start():
         nrjlounge()
     elif reply == "FD lounge radio":
         fdlounge()
+    elif reply == "Energy 1058":
+        energy1058()
     else:
         sys.exit(0)
 
