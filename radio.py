@@ -9,6 +9,33 @@ import sys
 from easygui import *
 import vlc
 
+
+def house247():
+    player = vlc.MediaPlayer("http://247house.fm:9502/autodj")
+    player.play()
+    image = "./pictures/247house.png"
+    msg = "You are listening the 247house radio"
+    choices = ["Exit","Start menu"]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    else:
+        sys.exit(0)
+
+def dab247():
+    player = vlc.MediaPlayer("http://stream.247drumandbass.com/stream/1/")
+    player.play()
+    image = "./pictures/logo247.png"
+    msg = "You are listening the 247 Drum and Bass radio"
+    choices = ["Exit","Start menu"]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    else:
+        sys.exit(0)
+
 def energy1058():
     player = vlc.MediaPlayer("http://tachyon.shoutca.st:8590/stream")
     player.play()
@@ -78,7 +105,7 @@ def abcpiano():
 def start():
     image = "./pictures/live.jpg"
     msg = "Click on the button to open a live web radio"
-    choices = ["Mosaique FM","ABC Piano","NRJ Lounge","FD lounge radio","Energy 1058"]
+    choices = ["Mosaique FM","ABC Piano","NRJ Lounge","FD lounge radio","Energy 1058","247 Drum and Bass","247 House FM"]
     reply = buttonbox(msg, image=image, choices=choices)
     if reply == "Mosaique FM":
         radiomosaique()
@@ -90,6 +117,10 @@ def start():
         fdlounge()
     elif reply == "Energy 1058":
         energy1058()
+    elif reply == "247 Drum and Bass":
+        dab247()
+    elif reply == "247 House FM":
+        house247()
     else:
         sys.exit(0)
 
