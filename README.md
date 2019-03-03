@@ -7,7 +7,7 @@
 
 This Python 3 software stream some radio stations from internet.
 
-![Screenshot](screenshot1.png)  
+![Screenshot](screenshot2.png)  
 
 
 ## What you need to make it work :  
