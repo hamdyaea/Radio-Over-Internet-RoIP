@@ -1,4 +1,4 @@
-[![Awesome](awesome.svg)]  [![Python](python.png)]  
+![Awesome](awesome.svg) ![Python](python.png)  
 
 # Radio over internet RoIP with GUI
 
