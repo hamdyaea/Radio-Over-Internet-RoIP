@@ -36,14 +36,23 @@ You need to install the vlc module for python 3
 sudo pip3 install python-vlc
 ```
 
-## How to launch this game :  
+## How to launch this software :  
 
 ```sh
 python3 radio.py
 ```  
 
+## Requirements :
+
+If you miss a module, install it pip install module-name.
+
+You need to have the original VLC software installed on your computer.
+
+Be carefull to install "pip install python-vlc" and not "pip install vlc"
+
 
 ## Developer - Author
+
 
 Hamdy Abou El Anein
 
