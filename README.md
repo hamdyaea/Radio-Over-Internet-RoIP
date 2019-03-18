@@ -44,7 +44,7 @@ python3 radio.py
 
 ## Requirements :
 
-If you miss a module, install it pip install module-name.
+If you miss a module, install it pip install module-name. If you miss PIL to have the pictures install pillow with pip.
 
 You need to have the original VLC software installed on your computer.
 
