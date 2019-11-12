@@ -321,7 +321,6 @@ def start():
         "NRJ Lounge",
         "FD lounge radio",
         "Energy 1058",
-        "247 Drum and Bass",
         "247 House FM",
     ]
     reply = buttonbox(msg, image=image, choices=choices)
