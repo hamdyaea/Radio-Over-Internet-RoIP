@@ -9,15 +9,14 @@
 import sys
 from easygui import *
 import vlc
+import json
 
 vol = 50
 
 
 def coranradio():
-    global vol
-    player = vlc.MediaPlayer(
-        "http://5.135.194.225:8000/live"
-    )  # import from a json file
+    global vol, allradio
+    player = vlc.MediaPlayer(allradio["coranradio"])
     player.play()
     image = (
         "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/coran-radio.jpg"
@@ -51,8 +50,8 @@ def coranradio():
 
 
 def house247():
-    global vol
-    player = vlc.MediaPlayer("http://247house.fm:9502/autodj")
+    global vol, allradio
+    player = vlc.MediaPlayer(allradio["house247"])
     player.play()
     image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/247house.png"
     msg = (
@@ -89,8 +88,8 @@ def house247():
 
 
 def dab247():
-    global vol
-    player = vlc.MediaPlayer("http://stream.247drumandbass.com/stream/1/")
+    global vol, allradio
+    player = vlc.MediaPlayer(allradio["dab247"])
     player.play()
     image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/logo247.png"
     msg = (
@@ -127,8 +126,8 @@ def dab247():
 
 
 def energy1058():
-    global vol
-    player = vlc.MediaPlayer("http://tachyon.shoutca.st:8590/stream")
+    global vol, allradio
+    player = vlc.MediaPlayer(allradio["energy1058"])
     player.play()
     image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/energy1058.jpg"
     msg = (
@@ -165,8 +164,8 @@ def energy1058():
 
 
 def fdlounge():
-    global vol
-    player = vlc.MediaPlayer("http://listen.radionomy.com/fd-lounge-radio")
+    global vol, allradio
+    player = vlc.MediaPlayer(allradio["fdlounge"])
     player.play()
     image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/fdlounge.jpg"
     msg = (
@@ -200,8 +199,8 @@ def fdlounge():
 
 
 def radiomosaique():
-    global vol
-    player = vlc.MediaPlayer("http://radio.mosaiquefm.net:8000/mosalive")
+    global vol, allradio
+    player = vlc.MediaPlayer(allradio["radiomosaique"])
     player.audio_set_volume(vol)
     player.play()
     image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/mosaique.jpg"
@@ -239,10 +238,8 @@ def radiomosaique():
 
 
 def nrjlounge():
-    global vol
-    player = vlc.MediaPlayer(
-        "http://cdn.nrjaudio.fm/adwz1/fr/30049/mp3_128.mp3?origine=fluxradios"
-    )
+    global vol, allradio
+    player = vlc.MediaPlayer(allradio["nrjlounge"])
     player.play()
     image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/nrjlounge.jpg"
     msg = (
@@ -279,8 +276,8 @@ def nrjlounge():
 
 
 def abcpiano():
-    global vol
-    player = vlc.MediaPlayer("http://listen.radionomy.com/abc-piano")
+    global vol, allardio
+    player = vlc.MediaPlayer(allradio["abcpiano"])
     player.play()
     image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/abcpiano.jpg"
     msg = (
@@ -348,4 +345,11 @@ def start():
         sys.exit(0)
 
 
+def parser():
+    global allradio
+    with open("radio.json", "r") as r:
+        allradio = json.load(r)
+
+
+parser()
 start()

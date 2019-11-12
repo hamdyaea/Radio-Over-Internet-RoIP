@@ -1,0 +1,10 @@
+{
+   "coranradio":"http://5.135.194.225:8000/live",
+   "house247":"http://247house.fm:9502/autodj",
+   "dab247":"http://stream.247drumandbass.com/stream/1/",
+   "energy1058":"http://tachyon.shoutca.st:8590/stream",
+   "fdlounge":"http://listen.radionomy.com/fd-lounge-radio",
+   "radiomosaique":"http://radio.mosaiquefm.net:8000/mosalive",
+   "nrjlounge":"http://cdn.nrjaudio.fm/adwz1/fr/30049/mp3_128.mp3?origine=fluxradios",
+   "abcpiano":"http://listen.radionomy.com/abc-piano"
+}
