@@ -4,7 +4,7 @@
 # hamdy.aea@protonmail.com
 # writed in python 3
 # Read the readme to install the python 3 modules and dependencies
-
+# change the picture path to your own
 
 import sys
 from easygui import *
@@ -19,7 +19,9 @@ def coranradio():
         "http://5.135.194.225:8000/live"
     )  # import from a json file
     player.play()
-    image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/coran-radio.jpg"
+    image = (
+        "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/coran-radio.jpg"
+    )
     msg = ("You are listening Radio Quran") + str("\n\nVolume ") + str(vol) + str("%")
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
     reply = buttonbox(msg, image=image, choices=choices)
