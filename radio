@@ -1,0 +1,349 @@
+#!/usr/bin/python3
+
+# Developer : Hamdy Abou El Anein
+# hamdy.aea@protonmail.com
+# writed in python 3
+# Read the readme to install the python 3 modules and dependencies
+
+
+import sys
+from easygui import *
+import vlc
+
+vol = 50
+
+
+def coranradio():
+    global vol
+    player = vlc.MediaPlayer(
+        "http://5.135.194.225:8000/live"
+    )  # import from a json file
+    player.play()
+    image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/coran-radio.jpg"
+    msg = ("You are listening Radio Quran") + str("\n\nVolume ") + str(vol) + str("%")
+    choices = ["Exit", "Start menu", "Volume up", "Volume low"]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    elif reply == "Volume up":
+        if vol < 100:
+            vol = vol + 10
+            player.audio_set_volume(vol)
+            player.stop()
+            coranradio()
+        else:
+            player.stop()
+            coranradio()
+    elif reply == "Volume low":
+        if vol > 0:
+            vol = vol - 10
+            player.audio_set_volume(vol)
+            player.stop()
+            coranradio()
+        else:
+            player.stop()
+            coranradio()
+    else:
+        sys.exit(0)
+
+
+def house247():
+    global vol
+    player = vlc.MediaPlayer("http://247house.fm:9502/autodj")
+    player.play()
+    image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/247house.png"
+    msg = (
+        ("You are listening the 247house radio")
+        + str("\n\nVolume ")
+        + str(vol)
+        + str("%")
+    )
+    choices = ["Exit", "Start menu", "Volume up", "Volume low"]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    elif reply == "Volume up":
+        if vol < 100:
+            vol = vol + 10
+            player.audio_set_volume(vol)
+            player.stop()
+            house247()
+        else:
+            player.stop()
+            house247()
+    elif reply == "Volume low":
+        if vol > 0:
+            vol = vol - 10
+            player.audio_set_volume(vol)
+            player.stop()
+            house247()
+        else:
+            player.stop()
+            house247()
+    else:
+        sys.exit(0)
+
+
+def dab247():
+    global vol
+    player = vlc.MediaPlayer("http://stream.247drumandbass.com/stream/1/")
+    player.play()
+    image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/logo247.png"
+    msg = (
+        ("You are listening the 247 Drum and Bass radio")
+        + str("\n\nVolume ")
+        + str(vol)
+        + str("%")
+    )
+    choices = ["Exit", "Start menu", "Volume up", "Volume low"]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    elif reply == "Volume up":
+        if vol < 100:
+            vol = vol + 10
+            player.audio_set_volume(vol)
+            player.stop()
+            dab247()
+        else:
+            player.stop()
+            dab247()
+    elif reply == "Volume low":
+        if vol > 0:
+            vol = vol - 10
+            player.audio_set_volume(vol)
+            player.stop()
+            dab247()
+        else:
+            player.stop()
+            dab247()
+    else:
+        sys.exit(0)
+
+
+def energy1058():
+    global vol
+    player = vlc.MediaPlayer("http://tachyon.shoutca.st:8590/stream")
+    player.play()
+    image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/energy1058.jpg"
+    msg = (
+        ("You are listening the Energy 1058 radio")
+        + str("\n\nVolume ")
+        + str(vol)
+        + str("%")
+    )
+    choices = ["Exit", "Start menu", "Volume up", "Volume low"]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    elif reply == "Volume up":
+        if vol < 100:
+            vol = vol + 10
+            player.audio_set_volume(vol)
+            player.stop()
+            energy1058()
+        else:
+            player.stop()
+            energy1058()
+    elif reply == "Volume low":
+        if vol > 0:
+            vol = vol - 10
+            player.audio_set_volume(vol)
+            player.stop()
+            energy1058()
+        else:
+            player.stop()
+            energy1058()
+    else:
+        sys.exit(0)
+
+
+def fdlounge():
+    global vol
+    player = vlc.MediaPlayer("http://listen.radionomy.com/fd-lounge-radio")
+    player.play()
+    image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/fdlounge.jpg"
+    msg = (
+        ("You are listening FD lounge radio") + str("\n\nVolume ") + str(vol) + str("%")
+    )
+    choices = ["Exit", "Start menu", "Volume up", "Volume low"]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    elif reply == "Volume up":
+        if vol < 100:
+            vol = vol + 10
+            player.audio_set_volume(vol)
+            player.stop()
+            fdlounge()
+        else:
+            player.stop()
+            fdlounge()
+    elif reply == "Volume low":
+        if vol > 0:
+            vol = vol - 10
+            player.audio_set_volume(vol)
+            player.stop()
+            fdlounge()
+        else:
+            player.stop()
+            fdlounge()
+    else:
+        sys.exit(0)
+
+
+def radiomosaique():
+    global vol
+    player = vlc.MediaPlayer("http://radio.mosaiquefm.net:8000/mosalive")
+    player.audio_set_volume(vol)
+    player.play()
+    image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/mosaique.jpg"
+    msg = (
+        ("You are listening Mosaique FM live")
+        + str("\n\nVolume ")
+        + str(vol)
+        + str("%")
+    )
+    choices = ["Exit", "Start menu", "Volume up", "Volume low"]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    elif reply == "Volume up":
+        if vol < 100:
+            vol = vol + 10
+            player.audio_set_volume(vol)
+            player.stop()
+            radiomosaique()
+        else:
+            player.stop()
+            radiomosaique()
+    elif reply == "Volume low":
+        if vol > 0:
+            vol = vol - 10
+            player.audio_set_volume(vol)
+            player.stop()
+            radiomosaique()
+        else:
+            player.stop()
+            radiomosaique()
+    else:
+        sys.exit(0)
+
+
+def nrjlounge():
+    global vol
+    player = vlc.MediaPlayer(
+        "http://cdn.nrjaudio.fm/adwz1/fr/30049/mp3_128.mp3?origine=fluxradios"
+    )
+    player.play()
+    image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/nrjlounge.jpg"
+    msg = (
+        ("You are listening to NRJ lounge radio")
+        + str("\n\nVolume ")
+        + str(vol)
+        + str("%")
+    )
+    choices = ["Exit", "Start menu", "Volume up", "Volume low"]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    elif reply == "Volume up":
+        if vol < 100:
+            vol = vol + 10
+            player.audio_set_volume(vol)
+            player.stop()
+            nrjlounge()
+        else:
+            player.stop()
+            nrjlounge()
+    elif reply == "Volume low":
+        if vol > 0:
+            vol = vol - 10
+            player.audio_set_volume(vol)
+            player.stop()
+            nrjlounge()
+        else:
+            player.stop()
+            nrjlounge()
+    else:
+        sys.exit(0)
+
+
+def abcpiano():
+    global vol
+    player = vlc.MediaPlayer("http://listen.radionomy.com/abc-piano")
+    player.play()
+    image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/abcpiano.jpg"
+    msg = (
+        ("You are listening ABC Piano live") + str("\n\nVolume ") + str(vol) + str("%")
+    )
+    choices = ["Exit", "Start menu", "Volume up", "Volume low"]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    elif reply == "Volume up":
+        if vol < 100:
+            vol = vol + 10
+            player.audio_set_volume(vol)
+            player.stop()
+            abcpiano()
+        else:
+            player.stop()
+            abcpiano()
+    elif reply == "Volume low":
+        if vol > 0:
+            vol = vol - 10
+            player.audio_set_volume(vol)
+            player.stop()
+            abcpiano()
+        else:
+            player.stop()
+            abcpiano()
+    else:
+        sys.exit(0)
+
+
+def start():
+    vol = 50
+    image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/live.jpg"
+    msg = "Click on the button to open a live web radio"
+    choices = [
+        "Radio Quran",
+        "Mosaique FM",
+        "ABC Piano",
+        "NRJ Lounge",
+        "FD lounge radio",
+        "Energy 1058",
+        "247 Drum and Bass",
+        "247 House FM",
+    ]
+    reply = buttonbox(msg, image=image, choices=choices)
+    if reply == "Mosaique FM":
+        radiomosaique()
+    elif reply == "ABC Piano":
+        abcpiano()
+    elif reply == "NRJ Lounge":
+        nrjlounge()
+    elif reply == "FD lounge radio":
+        fdlounge()
+    elif reply == "Energy 1058":
+        energy1058()
+    elif reply == "247 Drum and Bass":
+        dab247()
+    elif reply == "247 House FM":
+        house247()
+    elif reply == "Radio Quran":
+        coranradio()
+    else:
+        sys.exit(0)
+
+
+start()
