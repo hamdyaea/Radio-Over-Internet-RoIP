@@ -41,7 +41,7 @@ sudo pip3 install python-vlc
 ## How to launch this software :  
 
 ```sh
-python3 radio.py
+python3 radio
 ```  
 
 ## Requirements :
