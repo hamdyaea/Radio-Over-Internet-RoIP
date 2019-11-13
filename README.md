@@ -16,7 +16,7 @@ This Python 3 software stream some radio stations from internet.
 
 ## What you need to make it work :  
 
-Please change all the pictures path to your own : image = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/logo247.png"
+Please change all the pictures path to your own : path="/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/"
 
 The last version of Python 3.
 
