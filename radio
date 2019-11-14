@@ -353,8 +353,9 @@ def parser():
         with open(json_path + str("radio.json"), "r") as r:
             allradio = json.load(r)
     except:
-        print("IMPORTANT : Please verify the path of the radio.json file in the code")
-
+        print("\n\n\n !!! IMPORTANT : Please verify the path of the radio.json file in the code !!!\n\n\n")
+        print("The actual path is : "+str(json_path)+str("\n\n"))
+        sys.exit(1)
 
 parser()
 start()
