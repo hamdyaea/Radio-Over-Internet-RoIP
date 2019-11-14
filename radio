@@ -349,8 +349,11 @@ def start():
 
 def parser():
     global allradio
-    with open(json_path + str("radio.json"), "r") as r:
-        allradio = json.load(r)
+    try:
+        with open(json_path + str("radio.json"), "r") as r:
+            allradio = json.load(r)
+    except:
+        print("IMPORTANT : Please verify the path of the radio.json file in the code")
 
 
 parser()
