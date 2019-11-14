@@ -14,14 +14,16 @@ import json
 vol = 50
 
 # Picturs path, change it to your own
-path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/"
+pic_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/"
+# Json file path, change it to your own
+json_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/"
 
 
 def coranradio():
     global vol, allradio
     player = vlc.MediaPlayer(allradio["coranradio"])
     player.play()
-    image = path + str("coran-radio.jpg")
+    image = pic_path + str("coran-radio.jpg")
     msg = ("You are listening Radio Quran") + str("\n\nVolume ") + str(vol) + str("%")
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
     reply = buttonbox(msg, image=image, choices=choices)
@@ -54,7 +56,7 @@ def house247():
     global vol, allradio
     player = vlc.MediaPlayer(allradio["house247"])
     player.play()
-    image = path + str("247house.png")
+    image = pic_path + str("247house.png")
     msg = (
         ("You are listening the 247house radio")
         + str("\n\nVolume ")
@@ -92,7 +94,7 @@ def dab247():
     global vol, allradio
     player = vlc.MediaPlayer(allradio["dab247"])
     player.play()
-    image = path + str("logo247.png")
+    image = pic_path + str("logo247.png")
     msg = (
         ("You are listening the 247 Drum and Bass radio")
         + str("\n\nVolume ")
@@ -130,7 +132,7 @@ def energy1058():
     global vol, allradio
     player = vlc.MediaPlayer(allradio["energy1058"])
     player.play()
-    image = path + str("energy1058.jpg")
+    image = pic_path + str("energy1058.jpg")
     msg = (
         ("You are listening the Energy 1058 radio")
         + str("\n\nVolume ")
@@ -168,7 +170,7 @@ def fdlounge():
     global vol, allradio
     player = vlc.MediaPlayer(allradio["fdlounge"])
     player.play()
-    image = path + str("fdlounge.jpg")
+    image = pic_path + str("fdlounge.jpg")
     msg = (
         ("You are listening FD lounge radio") + str("\n\nVolume ") + str(vol) + str("%")
     )
@@ -204,7 +206,7 @@ def radiomosaique():
     player = vlc.MediaPlayer(allradio["radiomosaique"])
     player.audio_set_volume(vol)
     player.play()
-    image = path + str("mosaique.jpg")
+    image = pic_path + str("mosaique.jpg")
     msg = (
         ("You are listening Mosaique FM live")
         + str("\n\nVolume ")
@@ -242,7 +244,7 @@ def nrjlounge():
     global vol, allradio
     player = vlc.MediaPlayer(allradio["nrjlounge"])
     player.play()
-    image = path + str("nrjlounge.jpg")
+    image = pic_path + str("nrjlounge.jpg")
     msg = (
         ("You are listening to NRJ lounge radio")
         + str("\n\nVolume ")
@@ -280,7 +282,7 @@ def abcpiano():
     global vol, allardio
     player = vlc.MediaPlayer(allradio["abcpiano"])
     player.play()
-    image = path + str("abcpiano.jpg")
+    image = pic_path + str("abcpiano.jpg")
     msg = (
         ("You are listening ABC Piano live") + str("\n\nVolume ") + str(vol) + str("%")
     )
@@ -313,7 +315,7 @@ def abcpiano():
 
 def start():
     vol = 50
-    image = path + str("live.jpg")
+    image = pic_path + str("live.jpg")
     msg = "Click on the button to open a live web radio"
     choices = [
         "Radio Quran",
@@ -347,7 +349,7 @@ def start():
 
 def parser():
     global allradio
-    with open("radio.json", "r") as r:
+    with open(json_path + str("radio.json"), "r") as r:
         allradio = json.load(r)
 
 

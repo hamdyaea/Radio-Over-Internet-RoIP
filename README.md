@@ -16,7 +16,12 @@ This Python 3 software stream some radio stations from internet.
 
 ## What you need to make it work :  
 
-Please change all the pictures path to your own : path="/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/"
+IMPORTANT
+
+Please change the json file path all the pictures path to your own :
+
+pic_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures" 
+json_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original" 
 
 The last version of Python 3.
 
