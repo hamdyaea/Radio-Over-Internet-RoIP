@@ -30,6 +30,43 @@ RadioLive.pic_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/picture
 RadioLive.json_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/"
 
 
+def radioOrient():
+    player = vlc.MediaPlayer(RadioLive.allradio["radioOrient"])
+    player.play()
+    RadioLive.image = RadioLive.pic_path + str("radioOrient.png")
+    RadioLive.msg = (
+        ("You are listening Radio Orient")
+        + str("\n\nVolume ")
+        + str(RadioLive.vol)
+        + str("%")
+    )
+    choices = ["Exit", "Start menu", "Volume up", "Volume low"]
+    reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    elif reply == "Volume up":
+        if RadioLive.vol < 100:
+            RadioLive.vol = RadioLive.vol + 10
+            player.audio_set_volume(RadioLive.vol)
+            player.stop()
+            radioOrient()
+        else:
+            player.stop()
+            radioOrient()
+    elif reply == "Volume low":
+        if RadioLive.vol > 0:
+            RadioLive.vol = RadioLive.vol - 10
+            player.audio_set_volume(RadioLive.vol)
+            player.stop()
+            radioOrient()
+        else:
+            player.stop()
+            radioOrient()
+    else:
+        sys.exit(0)
+
+
 def coranradio():
     player = vlc.MediaPlayer(RadioLive.allradio["coranradio"])
     player.play()
@@ -339,6 +376,7 @@ def start():
         "FD lounge radio",
         "Energy 1058",
         "247 House FM",
+        "radio Orient",
     ]
     reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Mosaique FM":
@@ -357,6 +395,8 @@ def start():
         house247()
     elif reply == "Radio Quran":
         coranradio()
+    elif reply == "radio Orient":
+        radioOrient()
     else:
         sys.exit(0)
 

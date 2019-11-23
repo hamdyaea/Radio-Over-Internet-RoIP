@@ -6,5 +6,6 @@
    "fdlounge":"http://listen.radionomy.com/fd-lounge-radio",
    "radiomosaique":"http://radio.mosaiquefm.net:8000/mosalive",
    "nrjlounge":"http://cdn.nrjaudio.fm/adwz1/fr/30049/mp3_128.mp3?origine=fluxradios",
-   "abcpiano":"http://listen.radionomy.com/abc-piano"
+   "abcpiano":"http://listen.radionomy.com/abc-piano",
+   "radioOrient":"http://stream3.broadcast-associes.com:8405/Radio-Orient"
 }
