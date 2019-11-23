@@ -11,38 +11,48 @@ from easygui import *
 import vlc
 import json
 
-vol = 50
+
+class RadioLive:
+    def __init__(self):
+        self.pic_path
+        self.json_path
+        self.vol
+        self.allradio
+        self.msg
+        self.image
+
+
+RadioLive.vol = 50
 
 # Picturs path, change it to your own
-pic_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/"
+RadioLive.pic_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/pictures/"
 # Json file path, change it to your own
-json_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/"
+RadioLive.json_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/"
 
 
 def coranradio():
-    global vol, allradio
-    player = vlc.MediaPlayer(allradio["coranradio"])
+    player = vlc.MediaPlayer(RadioLive.allradio["coranradio"])
     player.play()
-    image = pic_path + str("coran-radio.jpg")
-    msg = ("You are listening Radio Quran") + str("\n\nVolume ") + str(vol) + str("%")
+    RadioLive.image = RadioLive.pic_path + str("coran-radio.jpg")
+    RadioLive.msg = ("You are listening Radio Quran") + str("\n\nVolume ") + str(RadioLive.vol) + str("%")
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
-    reply = buttonbox(msg, image=image, choices=choices)
+    reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Start menu":
         player.stop()
         start()
     elif reply == "Volume up":
-        if vol < 100:
-            vol = vol + 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol < 100:
+            RadioLive.vol = RadioLive.vol + 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             coranradio()
         else:
             player.stop()
             coranradio()
     elif reply == "Volume low":
-        if vol > 0:
-            vol = vol - 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol > 0:
+            RadioLive.vol = RadioLive.vol - 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             coranradio()
         else:
@@ -53,34 +63,33 @@ def coranradio():
 
 
 def house247():
-    global vol, allradio
-    player = vlc.MediaPlayer(allradio["house247"])
+    player = vlc.MediaPlayer(RadioLive.allradio["house247"])
     player.play()
-    image = pic_path + str("247house.png")
-    msg = (
+    RadioLive.image = RadioLive.pic_path + str("247house.png")
+    RadioLive.msg = (
         ("You are listening the 247house radio")
         + str("\n\nVolume ")
-        + str(vol)
+        + str(RadioLive.vol)
         + str("%")
     )
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
-    reply = buttonbox(msg, image=image, choices=choices)
+    reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Start menu":
         player.stop()
         start()
     elif reply == "Volume up":
-        if vol < 100:
-            vol = vol + 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol < 100:
+            RadioLive.vol = RadioLive.vol + 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             house247()
         else:
             player.stop()
             house247()
     elif reply == "Volume low":
-        if vol > 0:
-            vol = vol - 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol > 0:
+            RadioLive.vol = RadioLive.vol - 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             house247()
         else:
@@ -91,34 +100,33 @@ def house247():
 
 
 def dab247():
-    global vol, allradio
-    player = vlc.MediaPlayer(allradio["dab247"])
+    player = vlc.MediaPlayer(RadioLive.allradio["dab247"])
     player.play()
-    image = pic_path + str("logo247.png")
-    msg = (
+    RadioLive.image = RadioLive.pic_path + str("logo247.png")
+    RadioLive.msg = (
         ("You are listening the 247 Drum and Bass radio")
         + str("\n\nVolume ")
-        + str(vol)
+        + str(RadioLive.vol)
         + str("%")
     )
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
-    reply = buttonbox(msg, image=image, choices=choices)
+    reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Start menu":
         player.stop()
         start()
     elif reply == "Volume up":
-        if vol < 100:
-            vol = vol + 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol < 100:
+            RadioLive.vol = RadioLive.vol + 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             dab247()
         else:
             player.stop()
             dab247()
     elif reply == "Volume low":
-        if vol > 0:
-            vol = vol - 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol > 0:
+            RadioLive.vol = RadioLive.vol - 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             dab247()
         else:
@@ -129,34 +137,33 @@ def dab247():
 
 
 def energy1058():
-    global vol, allradio
-    player = vlc.MediaPlayer(allradio["energy1058"])
+    player = vlc.MediaPlayer(RadioLive.allradio["energy1058"])
     player.play()
-    image = pic_path + str("energy1058.jpg")
-    msg = (
+    RadioLive.image = RadioLive.pic_path + str("energy1058.jpg")
+    RadioLive.msg = (
         ("You are listening the Energy 1058 radio")
         + str("\n\nVolume ")
-        + str(vol)
+        + str(RadioLive.vol)
         + str("%")
     )
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
-    reply = buttonbox(msg, image=image, choices=choices)
+    reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Start menu":
         player.stop()
         start()
     elif reply == "Volume up":
-        if vol < 100:
-            vol = vol + 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol < 100:
+            RadioLive.vol = RadioLive.vol + 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             energy1058()
         else:
             player.stop()
             energy1058()
     elif reply == "Volume low":
-        if vol > 0:
-            vol = vol - 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol > 0:
+            RadioLive.vol = RadioLive.vol - 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             energy1058()
         else:
@@ -167,31 +174,30 @@ def energy1058():
 
 
 def fdlounge():
-    global vol, allradio
-    player = vlc.MediaPlayer(allradio["fdlounge"])
+    player = vlc.MediaPlayer(RadioLive.allradio["fdlounge"])
     player.play()
-    image = pic_path + str("fdlounge.jpg")
-    msg = (
-        ("You are listening FD lounge radio") + str("\n\nVolume ") + str(vol) + str("%")
+    RadioLive.image = RadioLive.pic_path + str("fdlounge.jpg")
+    RadioLive.msg = (
+        ("You are listening FD lounge radio") + str("\n\nVolume ") + str(RadioLive.vol) + str("%")
     )
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
-    reply = buttonbox(msg, image=image, choices=choices)
+    reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Start menu":
         player.stop()
         start()
     elif reply == "Volume up":
-        if vol < 100:
-            vol = vol + 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol < 100:
+            RadioLive.vol = RadioLive.vol + 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             fdlounge()
         else:
             player.stop()
             fdlounge()
     elif reply == "Volume low":
-        if vol > 0:
-            vol = vol - 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol > 0:
+            RadioLive.vol = RadioLive.vol - 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             fdlounge()
         else:
@@ -202,35 +208,34 @@ def fdlounge():
 
 
 def radiomosaique():
-    global vol, allradio
-    player = vlc.MediaPlayer(allradio["radiomosaique"])
-    player.audio_set_volume(vol)
+    player = vlc.MediaPlayer(RadioLive.allradio["radiomosaique"])
+    player.audio_set_volume(RadioLive.vol)
     player.play()
-    image = pic_path + str("mosaique.jpg")
-    msg = (
+    RadioLive.image = RadioLive.pic_path + str("mosaique.jpg")
+    RadioLive.msg = (
         ("You are listening Mosaique FM live")
         + str("\n\nVolume ")
-        + str(vol)
+        + str(RadioLive.vol)
         + str("%")
     )
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
-    reply = buttonbox(msg, image=image, choices=choices)
+    reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Start menu":
         player.stop()
         start()
     elif reply == "Volume up":
-        if vol < 100:
-            vol = vol + 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol < 100:
+            RadioLive.vol = RadioLive.vol + 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             radiomosaique()
         else:
             player.stop()
             radiomosaique()
     elif reply == "Volume low":
-        if vol > 0:
-            vol = vol - 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol > 0:
+            RadioLive.vol = RadioLive.vol - 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             radiomosaique()
         else:
@@ -241,34 +246,33 @@ def radiomosaique():
 
 
 def nrjlounge():
-    global vol, allradio
-    player = vlc.MediaPlayer(allradio["nrjlounge"])
+    player = vlc.MediaPlayer(RadioLive.allradio["nrjlounge"])
     player.play()
-    image = pic_path + str("nrjlounge.jpg")
-    msg = (
+    RadioLive.image = RadioLive.pic_path + str("nrjlounge.jpg")
+    RadioLive.msg = (
         ("You are listening to NRJ lounge radio")
         + str("\n\nVolume ")
-        + str(vol)
+        + str(RadioLive.vol)
         + str("%")
     )
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
-    reply = buttonbox(msg, image=image, choices=choices)
+    reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Start menu":
         player.stop()
         start()
     elif reply == "Volume up":
-        if vol < 100:
-            vol = vol + 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol < 100:
+            RadioLive.vol = RadioLive.vol + 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             nrjlounge()
         else:
             player.stop()
             nrjlounge()
     elif reply == "Volume low":
-        if vol > 0:
-            vol = vol - 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol > 0:
+            RadioLive.vol = RadioLive.vol - 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             nrjlounge()
         else:
@@ -279,31 +283,30 @@ def nrjlounge():
 
 
 def abcpiano():
-    global vol, allardio
-    player = vlc.MediaPlayer(allradio["abcpiano"])
+    player = vlc.MediaPlayer(RadioLive.allradio["abcpiano"])
     player.play()
-    image = pic_path + str("abcpiano.jpg")
-    msg = (
-        ("You are listening ABC Piano live") + str("\n\nVolume ") + str(vol) + str("%")
+    RadioLive.image = RadioLive.pic_path + str("abcpiano.jpg")
+    RadioLive.msg = (
+        ("You are listening ABC Piano live") + str("\n\nVolume ") + str(RadioLive.vol) + str("%")
     )
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
-    reply = buttonbox(msg, image=image, choices=choices)
+    reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Start menu":
         player.stop()
         start()
     elif reply == "Volume up":
-        if vol < 100:
-            vol = vol + 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol < 100:
+            RadioLive.vol = RadioLive.vol + 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             abcpiano()
         else:
             player.stop()
             abcpiano()
     elif reply == "Volume low":
-        if vol > 0:
-            vol = vol - 10
-            player.audio_set_volume(vol)
+        if RadioLive.vol > 0:
+            RadioLive.vol = RadioLive.vol - 10
+            player.audio_set_volume(RadioLive.vol)
             player.stop()
             abcpiano()
         else:
@@ -314,9 +317,9 @@ def abcpiano():
 
 
 def start():
-    vol = 50
-    image = pic_path + str("live.jpg")
-    msg = "Click on the button to open a live web radio"
+    RadioLive.vol = 50
+    RadioLive.image = RadioLive.pic_path + str("live.jpg")
+    RadioLive.msg = "Click on the button to open a live web radio"
     choices = [
         "Radio Quran",
         "Mosaique FM",
@@ -326,7 +329,7 @@ def start():
         "Energy 1058",
         "247 House FM",
     ]
-    reply = buttonbox(msg, image=image, choices=choices)
+    reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Mosaique FM":
         radiomosaique()
     elif reply == "ABC Piano":
@@ -348,15 +351,14 @@ def start():
 
 
 def parser():
-    global allradio
     try:
-        with open(json_path + str("radio.json"), "r") as r:
-            allradio = json.load(r)
+        with open(RadioLive.json_path + str("radio.json"), "r") as r:
+            RadioLive.allradio = json.load(r)
     except:
         print(
             "\n\n\n !!! IMPORTANT : Please verify the path of the radio.json file in the code !!!\n\n\n"
         )
-        print("The actual path is : " + str(json_path) + str("\n\n"))
+        print("The actual path is : " + str(RadioLive.json_path) + str("\n\n"))
         sys.exit(1)
 
 
