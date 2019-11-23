@@ -34,7 +34,12 @@ def coranradio():
     player = vlc.MediaPlayer(RadioLive.allradio["coranradio"])
     player.play()
     RadioLive.image = RadioLive.pic_path + str("coran-radio.jpg")
-    RadioLive.msg = ("You are listening Radio Quran") + str("\n\nVolume ") + str(RadioLive.vol) + str("%")
+    RadioLive.msg = (
+        ("You are listening Radio Quran")
+        + str("\n\nVolume ")
+        + str(RadioLive.vol)
+        + str("%")
+    )
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
     reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Start menu":
@@ -178,7 +183,10 @@ def fdlounge():
     player.play()
     RadioLive.image = RadioLive.pic_path + str("fdlounge.jpg")
     RadioLive.msg = (
-        ("You are listening FD lounge radio") + str("\n\nVolume ") + str(RadioLive.vol) + str("%")
+        ("You are listening FD lounge radio")
+        + str("\n\nVolume ")
+        + str(RadioLive.vol)
+        + str("%")
     )
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
     reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
@@ -287,7 +295,10 @@ def abcpiano():
     player.play()
     RadioLive.image = RadioLive.pic_path + str("abcpiano.jpg")
     RadioLive.msg = (
-        ("You are listening ABC Piano live") + str("\n\nVolume ") + str(RadioLive.vol) + str("%")
+        ("You are listening ABC Piano live")
+        + str("\n\nVolume ")
+        + str(RadioLive.vol)
+        + str("%")
     )
     choices = ["Exit", "Start menu", "Volume up", "Volume low"]
     reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
