@@ -29,6 +29,41 @@ RadioLive.pic_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/picture
 # Json file path, change it to your own
 RadioLive.json_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/"
 
+def CodeRadio():
+    player = vlc.MediaPlayer(RadioLive.allradio["CodeRadio"])
+    player.play()
+    RadioLive.image = RadioLive.pic_path + str("coderadio.png")
+    RadioLive.msg = (
+        ("You are listening Code Radio")
+        + str("\n\nVolume ")
+        + str(RadioLive.vol)
+        + str("%")
+    )
+    choices = ["Exit", "Start menu", "Volume up", "Volume low"]
+    reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
+    if reply == "Start menu":
+        player.stop()
+        start()
+    elif reply == "Volume up":
+        if RadioLive.vol < 100:
+            RadioLive.vol = RadioLive.vol + 10
+            player.audio_set_volume(RadioLive.vol)
+            player.stop()
+            CodeRadio()
+        else:
+            player.stop()
+            CodeRadio()
+    elif reply == "Volume low":
+        if RadioLive.vol > 0:
+            RadioLive.vol = RadioLive.vol - 10
+            player.audio_set_volume(RadioLive.vol)
+            player.stop()
+            CodeRadio()
+        else:
+            player.stop()
+            CodeRadio()
+    else:
+        sys.exit(0)
 
 def radioOrient():
     player = vlc.MediaPlayer(RadioLive.allradio["radioOrient"])
@@ -376,11 +411,13 @@ def start():
         "FD lounge radio",
         "Energy 1058",
         "247 House FM",
-        "radio Orient",
+        "radio Orient","Code Radio"
     ]
     reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Mosaique FM":
         radiomosaique()
+    elif reply =="Code Radio":
+        CodeRadio()
     elif reply == "ABC Piano":
         abcpiano()
     elif reply == "NRJ Lounge":
