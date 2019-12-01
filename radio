@@ -29,6 +29,7 @@ RadioLive.pic_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/picture
 # Json file path, change it to your own
 RadioLive.json_path = "/home/hamdy/Documents/Radio-Streaming-Gui-Original/"
 
+
 def CodeRadio():
     player = vlc.MediaPlayer(RadioLive.allradio["CodeRadio"])
     player.play()
@@ -64,6 +65,7 @@ def CodeRadio():
             CodeRadio()
     else:
         sys.exit(0)
+
 
 def radioOrient():
     player = vlc.MediaPlayer(RadioLive.allradio["radioOrient"])
@@ -411,12 +413,13 @@ def start():
         "FD lounge radio",
         "Energy 1058",
         "247 House FM",
-        "radio Orient","Code Radio"
+        "radio Orient",
+        "Code Radio",
     ]
     reply = buttonbox(RadioLive.msg, image=RadioLive.image, choices=choices)
     if reply == "Mosaique FM":
         radiomosaique()
-    elif reply =="Code Radio":
+    elif reply == "Code Radio":
         CodeRadio()
     elif reply == "ABC Piano":
         abcpiano()
